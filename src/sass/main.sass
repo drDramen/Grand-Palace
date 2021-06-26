@@ -1,0 +1,44 @@
+@import components/fonts
+@import components/vars
+@import components/mixins
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+html
+  line-height: 1.15
+  font-size: 10px
+body
+  margin: 0
+  font: 400 $fTextFirst Roboto, Arial, serif
+  color: $fontColorFirst
+  background-color: $bg
+  &.lock
+    overflow: hidden
+a
+  color: inherit
+  text-decoration: none
+  cursor: pointer
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  font-weight: inherit
+  font-size: inherit
+p
+  margin: 0
+
+svg, object
+  vertical-align: bottom
+
+.container
+  max-width: 90vw
+  margin: 0 auto
+
+@import components/header
+@import components/hero
+@import components/footer
