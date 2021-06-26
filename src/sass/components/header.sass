@@ -1,8 +1,11 @@
 .header
-  // position: fixed
-  // display: none
+  position: sticky
+  top: 0
+  left: 0
   width: 100vw
+  max-width: 100%
   background: $bg url(../img/header-bg.jpg) center/cover no-repeat
+  z-index: 2;
 
 .header-info__items
   display: flex
@@ -77,6 +80,7 @@
         color: $maincolor
 
 .header.menu-ctive
+  position: fixed
   height: 100vh
   background: $bg url(../img/menu-bg.jpg) center/cover no-repeat
   .header-info__items
