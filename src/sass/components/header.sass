@@ -1,0 +1,178 @@
+.header
+  // position: fixed
+  // display: none
+  width: 100vw
+  background: $bg url(../img/header-bg.jpg) center/cover no-repeat
+
+.header-info__items
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  padding: 17px 0 10px
+  .info-items__left, .info-items__right
+    display: flex
+    align-items: center
+    flex: 1 1 0%
+  .menu__icon
+    line-height: 0
+  .header__social, .header__phone
+    flex-grow: 1
+    text-align: center
+
+.icon__menu //-open
+  position: relative
+  display: inline-block
+  width: 67px
+  height: 40px
+  border-top: 10px solid $maincolor
+  border-bottom: 10px solid $maincolor
+  box-sizing: border-box
+  cursor: pointer
+  span
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    margin: auto
+    width: 67px
+    height: 10px
+    background-color: $maincolor
+
+.header__menu
+  width: 0
+  height: 0
+  opacity: 0
+  visibility: hidden
+  .menu__list
+    font: 500 $fTitleSecond 'Roboto Slab', Arial, serif
+    color: $fontColorMenu
+    text-align: center
+    text-transform: uppercase
+    > li
+      & + li
+        padding-top: 32px
+    .menu__link
+      position: relative
+      &::after, &::before
+        content: ''
+        position: absolute
+        left: 0
+        width: 0
+        height: 1px
+        background-color: $maincolor
+      &::after
+        top: 0
+      &::before
+        bottom: 0
+      &:hover
+        color: $fontColorMenu
+        //border-bottom: 1px solid $maincolor
+        &::after
+          width: 37%
+        &::before
+          width: 100%
+      &.active
+        color: $maincolor
+
+.header.menu-ctive
+  height: 100vh
+  background: $bg url(../img/menu-bg.jpg) center/cover no-repeat
+  .header-info__items
+    padding-top: 45px
+  .info-items__left
+    flex-basis: auto
+  .header__phone, .header__social, .header__lng-toggle
+    width: 0
+    height: 0
+    opacity: 0
+    visibility: hidden
+  .header__menu
+    margin: 0 -5% //scroll
+    padding: 0 5% //scroll
+    width: auto
+    height: 70vh //scroll, previous value: auto
+    opacity: 1
+    visibility: visible
+    overflow: auto //scroll
+  .header__logo
+    order: -1
+    text-align: left
+  .info-items__left
+    order: 1
+  .menu__icon
+    order: 1
+    text-align: right
+
+.icon__menu.active //-close
+  width: 62px
+  height: 62px
+  background-color: $maincolor
+  span
+    width: 43px
+    height: 43px
+    border: 2px solid #fff
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      margin: auto
+      width: 40px
+      height: 1px
+      background-color: #fff
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+
+.phone-list
+  display: flex
+  flex-direction: column
+  align-items: center
+  .phone-link
+    position: relative
+    display: inline-block
+    padding: 5px 0px 4px 30px
+    font: 500 1em 'Roboto Slab', Arial, serif
+    white-space: nowrap
+    & + .phone-link
+      margin-top: 5px
+    svg
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      margin: auto 0
+
+.social-list
+  .social-link
+    display: inline-block
+    transition: all .5s ease-out
+    & + .social-link
+      margin-left: 20px
+    object
+      pointer-events: none
+    &:hover
+      transform: scale(1.2)
+
+.header__lng-toggle
+  display: inline-block
+  font: 500 1.6rem 'Roboto Slab', Arial, serif
+  text-transform: uppercase
+  white-space: nowrap
+  a
+    display: inline-block
+    padding: 3px 9px 1px
+    border: 3px solid $maincolor
+    border-right: none
+    & + a
+      border: 3px solid $maincolor
+    &.active
+      color: $fontColorSecond
+      background-color: $maincolor
