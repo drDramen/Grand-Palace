@@ -1,9 +1,30 @@
 .row
-  margin: 0 -5%
+  margin: 0 -1.5%
 
 .hero
-  min-height: 670px
-  background: $bg url(../img/hero.jpg) center no-repeat
+  position: relative
+  background: $bg url(../img/hero.jpg) center bottom/cover no-repeat
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 50%
+    height: 100%
+    background-color: #0d1b29
+    opacity: .55
   .left-side
+    position: relative
     flex: 0 0 50%
     max-width: 50%
+    padding: 270px 1.5% 215px
+    color: $fontColorSecond
+  .tagline
+    margin-bottom: 15px
+    font: 500 $fTitleMain 'Roboto Slab', Arial, serif
+    text-transform: uppercase
+  .title
+    font: 500 $fTextSecond 'Roboto', Arial, serif
+    line-height: 1.5
+    .text
+      display: block
