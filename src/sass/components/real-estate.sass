@@ -1,0 +1,75 @@
+
+.real-estate
+  padding: 50px 0
+  article:not(:last-child)
+    margin-bottom: 50px
+  .short-description
+    margin-bottom: 50px
+  .short-description__title
+    display: inline-block
+    margin-bottom: 43px
+    padding: 0 0 9px
+    font: 500 3rem 'Roboto Slab', Arial, serif
+    text-transform: uppercase
+    border-bottom: 1px solid $maincolor
+    > span
+      position: relative
+      display: inline-block
+      padding-top: 9px
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 110%
+        height: 1px
+        background-color: $maincolor
+  .short-description__text
+    margin-bottom: 45px
+    padding-right: 35px
+    line-height: 1.5
+  .short-description__btn
+    padding: 10px 56px 13px
+    &:hover
+      transform: scale(1.05)
+      box-shadow: 0 5px 2.5px rgba(67,4,4,0.2)
+  .images-slider__items
+    display: flex
+    justify-content: space-between
+    margin-bottom: 50px
+    min-height: 250px
+    .images-slider__item
+      display: inline-block
+      flex: 1 1 5%
+      & + .images-slider__item
+        margin-left: 2.5%
+      &.active
+        flex-basis: 65%
+
+.real-estate__residential
+  .slider-item-
+    &1
+      background: $bg url(../img/residential-slider-1.jpg) center/cover no-repeat
+    &2
+      background: $bg url(../img/residential-slider-2.jpg) center/cover no-repeat
+    &3
+      background: $bg url(../img/residential-slider-3.jpg) center/cover no-repeat
+    &4
+      background: $bg url(../img/residential-slider-4.jpg) center/cover no-repeat
+    &5
+      background: $bg url(../img/residential-slider-5.jpg) center/cover no-repeat
+
+.real-estate__commercial
+  .short-description
+    order: 1
+  .slider-item-
+    &1
+      background: $bg url(../img/commercial-slider-1.jpg) center/cover no-repeat
+    &2
+      background: $bg url(../img/commercial-slider-2.jpg) center/cover no-repeat
+    &3
+      background: $bg url(../img/commercial-slider-3.jpg) center/cover no-repeat
+    &4
+      background: $bg url(../img/commercial-slider-4.jpg) center/cover no-repeat
+    &5
+      background: $bg url(../img/commercial-slider-5.jpg) center/cover no-repeat
