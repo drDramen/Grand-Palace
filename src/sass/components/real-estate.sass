@@ -3,9 +3,14 @@
   padding: 50px 0
   article:not(:last-child)
     margin-bottom: 50px
+    .short-description, .images-slider__items
+      margin-bottom: 50px
   .short-description
-    margin-bottom: 50px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
   .short-description__title
+    align-self: flex-start;
     display: inline-block
     margin-bottom: 43px
     padding: 0 0 9px
@@ -29,6 +34,7 @@
     padding-right: 35px
     line-height: 1.5
   .short-description__btn
+    align-self: flex-start
     padding: 10px 56px 13px
     &:hover
       transform: scale(1.05)
@@ -36,7 +42,6 @@
   .images-slider__items
     display: flex
     justify-content: space-between
-    margin-bottom: 50px
     min-height: 250px
     .images-slider__item
       display: inline-block
