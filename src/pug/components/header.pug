@@ -7,7 +7,7 @@ header.header
             span
         .header-info__item.header__phone.phone-list
           a.phone-link(href='tel:+380670098700')
-            +svg(19, 29, 'phone')
+            +svg('phone', 19, 29)
             |(067)&nbsp;00-98-700
       .header-info__item.header__logo
         a.menu__logo(href='/')
@@ -15,7 +15,7 @@ header.header
       .info-items__right
         .header-info__item.header__social.social-list
           a.social-link(href='#')
-            +svg(31, 31, 'fb')
+            +svg('fb', 31, 31)
           a.social-link(href='#')
             //Через внешний спрайт не работает градиент. Оставить object но добавить pointer-events: none. Или подключить такие иконки через img
             object(class='icon' type='image/svg+xml' data='img/instagram.svg' width='31' height='31')
