@@ -1,1 +1,78 @@
-section
+section.plan
+  .title-wrap
+    h2.plan__title
+      span Загальний
+      |  план
+  .plan-bg
+    .container
+      .row
+        aside.plan__legend
+          h3 Умовні позначення
+          ol
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Парковка
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Фітнес центр
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Торговий центр
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Медичний центр
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Парк <span class="uppercase">Terrase</span>
+            li
+              .legend__icon
+                +svg('pin')
+              span.legend__text Тераси
+        .plan__visual
+          .plan-visual__img
+            img(src="../img/general-plan-bg.jpg" alt="")
+            ol.legend__location
+              li
+                .legend__icon
+                  +svg('pin')
+              li
+                .legend__icon
+                  +svg('pin')
+              li
+                .legend__icon
+                  +svg('pin')
+              li
+                .legend__icon
+                  +svg('pin')
+              li
+                .legend__icon
+                  +svg('pin')
+              li
+                .legend__icon
+                  +svg('pin')
+              li.six
+                .legend__icon
+                  +svg('pin')
+              li.six
+                .legend__icon
+                  +svg('pin')
+            span.street-left вулиця Подільська
+            span.street-right вулиця Свободи
+            ul.queue
+              li I
+              li II
+              li III
+        aside.plan__legend
+          h3 Черга
+          ul.legend__queue
+            li
+              span.legend__text - перша черга
+            li
+              span.legend__text - друга черга
+            li
+              span.legend__text - третя черга
