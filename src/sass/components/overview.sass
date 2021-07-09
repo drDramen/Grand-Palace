@@ -1,0 +1,63 @@
+.overview
+  position: relative
+
+.btn-arrow
+  padding: 11px 84px
+  svg
+    width: 57px
+    height: 26px
+    fill: $fontColorSecond
+  &--left
+    svg
+      transform: rotate(180deg)
+
+.overview__items
+  position: relative
+  > .container
+    display: flex
+    justify-content: flex-end
+  .overview__items-container
+    padding: 55px 22px
+    max-width: 245px
+    background-color: $bg
+  .overview__item:not(:last-child)
+    .item-header
+      margin-bottom: 38px
+  .item-header
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    .item-header__icon
+      width: 200px
+      height: 110px
+      padding: 13px 0
+      border: 1px solid #333333
+      background-color: #ffffff
+  .icon-sprite
+    height: 100%
+  .item-header__text
+    margin-bottom: 18px
+    font: 500 $fTextSecond 'Roboto Slab', Arial, serif
+    letter-spacing: 1px
+
+.content
+  position: absolute
+  top: 155px
+  left: 0
+  width: 478px
+  height: 326px
+  padding: 50px 50px 10px 28px
+  background-color: #faf7f3
+  &__description
+    @include adaptiv-prop('font-size', 18, 14, 0)
+    line-height: 1.5
+    overflow: hidden
+  .content__title
+    margin-bottom: 15px
+    color: #3c3839
+    font-weight: 600
+
+
+.comfort
+  background: $bg url(../img/header-bg.jpg) center/cover no-repeat
