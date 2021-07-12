@@ -1,5 +1,25 @@
 .overview
   position: relative
+  height: 770px
+.overview-slider
+  position: relative
+  display: flex
+  min-width: 100%
+  height: 100%
+  overflow: hidden
+
+.overview-btn__container
+  position: absolute
+  width: 90vw
+  top: calc(20% + 380px)
+  left: 0
+  right: 0
+  border: 0
+  margin: 0 auto
+  z-index: 1
+
+.btn-arrow + .btn-arrow
+  margin-left: 28px
 
 .btn-arrow
   padding: 11px 84px
@@ -7,34 +27,78 @@
     width: 57px
     height: 26px
     fill: $fontColorSecond
-  &--left
+  &-prev
     svg
       transform: rotate(180deg)
+  &:hover
+    padding-bottom: 12px
+    transform: none
 
 .overview__items
   position: relative
-  > .container
+  height: 100%
+  min-width: 100%
+  overflow: hidden
+  .container
+    // position: relative
+    height: 100%
+  &-container
     display: flex
-    justify-content: flex-end
-  .overview__items-container
-    padding: 55px 22px
-    max-width: 245px
-    background-color: $bg
-  .overview__item:not(:last-child)
-    .item-header
-      margin-bottom: 38px
-  .item-header
+    height: 100%
+    flex-direction: column
+    align-items: flex-end
+    justify-content: space-between
+  &-box
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: space-between
+    height: 100%
+  &.active
+    order: -1
+
+  .overview__item
+    flex-basis: 33.3333%
+    flex-grow: 1
+    width: 100%
+    &:not(:last-child)
+      .item-header
+        // margin-bottom: 38px
+    &:first-child
+      .item-header
+        // padding-top: 55px
+    &:last-child
+      .item-header
+        // padding-bottom: 55px
+  .item-header
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-left: 22px
+    padding-right: 22px
+    width: 245px
+    height: 100%
     text-align: center
+    background-color: $bg
+    z-index: 3
     .item-header__icon
-      width: 200px
-      height: 110px
-      padding: 13px 0
-      border: 1px solid #333333
-      background-color: #ffffff
+      position: relative
+      padding-bottom: 54%
+      width: 100%
+      border: 1px solid #333
+      background-color: #fff
+
   .icon-sprite
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    padding: 9% 0
+    max-width: 100%
     height: 100%
   .item-header__text
     margin-bottom: 18px
@@ -42,22 +106,94 @@
     letter-spacing: 1px
 
 .content
-  position: absolute
-  top: 155px
-  left: 0
-  width: 478px
-  height: 326px
-  padding: 50px 50px 10px 28px
-  background-color: #faf7f3
+  &-section
+    position: relative
+    background-color: #faf7f3
+    z-index: 1
+  &-bg
+    position: absolute
+    top: 0
+    left: 100%
+    width: 100%
+    height: 100%
+    transition: 0.5s ease
+    opacity: 0
+  &-wrapper
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    .container
+      position: relative
+  &-wrap
+    position: absolute
+    top: 20%
+    left: 0
+    width: 478px
+    height: 350px
+    overflow: hidden
+  &-box
+    padding: 50px 50px 10px 28px
+
+    // background-color: #faf7f3
   &__description
     @include adaptiv-prop('font-size', 18, 14, 0)
     line-height: 1.5
     overflow: hidden
-  .content__title
+  &__title
     margin-bottom: 15px
     color: #3c3839
     font-weight: 600
+.overview__item
+  .content-box
+    position: relative
+    left: 100%
+    transition: .5s ease
+    background-color: #faf7f3
 
+    height: 100%
+    z-index: 5
+    // opacity: 0
+.item-header
+  &:hover
+    cursor: pointer
+    .item-header__icon
+      background-color: $maincolor
+    .icon-sprite
+      fill: $fontColorSecond
+    & + .content
+      .content-bg
+        left: 0
+        opacity: 1
+      .content-box
+        left: 0
+        opacity: 1
 
 .comfort
-  background: $bg url(../img/header-bg.jpg) center/cover no-repeat
+  background: $bg url(../img/bg-parking.jpg) center/cover no-repeat
+
+.leisure
+  background: $bg url(../img/bg-restaurant.jpg) center/cover no-repeat
+
+.health
+  background: $bg url(../img/bg-fitness.jpg) top/cover no-repeat
+
+.bg-office
+  background: $bg url(../img/bg-office.jpg) center/cover no-repeat
+.bg-parking
+  background: $bg url(../img/bg-parking.jpg) center/cover no-repeat
+.bg-drycleaning
+  background: $bg url(../img/bg-drycleaning.jpg) center/cover no-repeat
+.bg-restaurants
+  background: $bg url(../img/bg-restaurant.jpg) center/cover no-repeat
+.bg-purchases
+  background: $bg url(../img/bg-purchases.jpg) center/cover no-repeat
+.bg-park
+  background: $bg url(../img/bg-park.jpg) center/cover no-repeat
+.bg-medicalcenter
+  background: $bg url(../img/bg-medicalcenter.jpg) center/cover no-repeat
+.bg-playground
+  background: $bg url(../img/bg-playground.jpg) center/cover no-repeat
+.bg-fitness
+  background: $bg url(../img/bg-fitness.jpg) center/cover no-repeat
