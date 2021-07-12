@@ -37,9 +37,9 @@ img
   width: 100%
 
 main
-  > section + section
+  & > section + section
     padding: 50px 0
-  > section:first-child, > section:last-child
+  & > section:first-child, > section:last-child
     margin-bottom: 50px
 
 .container
@@ -97,9 +97,10 @@ main
   color: $fontColorSecond
   text-transform: uppercase
   background-color: $maincolor
+  cursor: pointer
   &:hover
-    transform: scale(1.05)
-    box-shadow: 0 5px 2.5px rgba(67,4,4,0.2)
+    transform: scale(1.02)
+    box-shadow: 0 5px 5px 2.5px rgba(67,4,4,0.2)
     // & svg
     //   transform: scale(1)
 
