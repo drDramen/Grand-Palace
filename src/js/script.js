@@ -8,16 +8,42 @@ if (iconMenu) {
     header.classList.toggle("menu-ctive");
   });
 }
+//Menu
 
-// language
-// const iconLng = document.querySelectorAll(".header__lng-toggle a");
+//slider
+const prev = document.querySelector('.btn-arrow-prev'),
+      next = document.querySelector('.btn-arrow-next'),
+      slides = document.querySelectorAll('.overview__items');
 
-// if (iconLng) {
-//   iconLng.forEach((element, ind, array) => {
-//     element.addEventListener("click", (e) => {
-//       array.forEach((elem) => {
-//         elem.classList.toggle("--active");
-//       });
-//     });
-//   });
-// }
+let index = 0;
+
+const activeSlide = n => {
+    for (slide of slides) {
+        slide.classList.remove('active');
+    }
+    slides[n].classList.add('active');
+}
+
+const nextSlide = () => {
+    if(index == slides.length - 1) {
+        index = 0;
+        activeSlide(index)
+    } else {
+        index++;
+        activeSlide(index)
+    }
+}
+
+const prevSlide = () => {
+    if(index == 0) {
+        index = slides.length - 1;
+        activeSlide(index)
+    } else {
+        index--;
+        activeSlide(index)
+    }
+}
+
+prev.addEventListener('click', nextSlide)
+next.addEventListener('click', prevSlide)
+//slider
