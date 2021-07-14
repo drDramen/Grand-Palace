@@ -3,8 +3,10 @@ section.panorama
     .panorama-slider__header
       h2.panorama-slider__title Панорама міста
       .panorama-slider__switcher
-        +svg('halfmoon')
-        +svg('sun')
+        span.active
+          +svg('halfmoon')
+        span
+          +svg('sun')
     .panorama-slider__items
       .panorama-slider__item.fade.active
         img.night(src="../img/panoramanight.jpg" alt="Grand Palace - панорама на місто Хмельницький вночі")
