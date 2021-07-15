@@ -1,0 +1,34 @@
+.construction-progress
+  &__title
+    margin-bottom: 30px
+  &__galery
+    display: flex
+    margin-bottom: 50px
+    height: 260px
+    justify-content: space-between
+    // gap: 50px
+    // flex-wrap: wrap
+  &__img
+    flex-basis: 25%
+    // height: 260px
+    max-width: 25%
+    padding-left: 1.5%
+    padding-right: 1.5%
+    height: 100%
+    transition: .5s ease
+    img
+      height: 100%
+      object-fit: cover
+      object-position: top
+    &:hover
+      transform: scale(1.1)
+
+    &.active
+      position: relative;
+      transform: translateX(-50%)scale(3);
+      top: 0;
+      left: 50%;
+  .btn-wrap
+    text-align: center
+  &__btn
+    padding: 20px 40px
