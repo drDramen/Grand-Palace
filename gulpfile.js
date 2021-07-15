@@ -16,11 +16,11 @@ let gulp = require("gulp"),
 gulp.task("browser-sync", function () {
   browserSync({
     server: {
-      baseDir: "dist",
+      baseDir: "dist"
     },
     notify: true,
     open: true,
-    browser: "chrome",
+    browser: "chrome"
     //port: 8080
   });
 });
@@ -36,7 +36,7 @@ gulp.task("html", function () {
     .pipe(gulp.dest("dist"))
     .pipe(
       browserSync.reload({
-        stream: true,
+        stream: true
       })
     );
 });
@@ -47,26 +47,26 @@ gulp.task("css", function () {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "expanded", //compressed, expanded, compact
+        outputStyle: "expanded" //compressed, expanded, compact
       }).on("error", notify.onError())
     )
     .pipe(
       autoprefixer(["last 15 versions"], {
-        cascade: true,
+        cascade: true
       })
     )
     .pipe(gcmq("main.css"))
     .pipe(concat("main.css"))
     .pipe(
       cleanCSS({
-        compatibility: "ie8",
+        compatibility: "ie8"
       })
     )
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("dist/css"))
     .pipe(
       browserSync.reload({
-        stream: true,
+        stream: true
       })
     );
 });
@@ -82,7 +82,7 @@ gulp.task("js", function () {
       .pipe(gulp.dest("dist/js"))
       .pipe(
         browserSync.reload({
-          stream: true,
+          stream: true
         })
       )
   );
@@ -94,7 +94,7 @@ gulp.task("files", function () {
     .pipe(gulp.dest("dist"))
     .pipe(
       browserSync.reload({
-        stream: true,
+        stream: true
       })
     );
 });
@@ -105,7 +105,7 @@ gulp.task("fonts", function () {
     .pipe(gulp.dest("dist/fonts"))
     .pipe(
       browserSync.reload({
-        stream: true,
+        stream: true
       })
     );
 });
@@ -126,16 +126,16 @@ gulp.task("images", function () {
               { interlaced: true },
               { removeViewBox: false },
               { removeUselessStrokeAndFill: false },
-              { cleanupIDs: false },
-            ],
-          }),
+              { cleanupIDs: false }
+            ]
+          })
         ])
       )
     )
     .pipe(gulp.dest("dist/img"))
     .pipe(
       browserSync.reload({
-        stream: true,
+        stream: true
       })
     );
 });

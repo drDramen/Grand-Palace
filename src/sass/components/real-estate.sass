@@ -10,7 +10,7 @@
     flex-direction: column
     justify-content: space-between
   .short-description__title
-    align-self: flex-start;
+    align-self: flex-start
     display: inline-block
     margin-bottom: 43px
   .short-description__text
@@ -25,12 +25,12 @@
     justify-content: space-between
     min-height: 250px
     .images-slider__item
-      display: inline-block
-      flex: 1 1 5%
-      & + .images-slider__item
-        margin-left: 2.5%
+      flex: 0 1 6%
+      max-width: 6%
+      transition: .5s ease
       &.active
         flex-basis: 65%
+        max-width: 65%
 
 .real-estate__residential
   .slider-item-

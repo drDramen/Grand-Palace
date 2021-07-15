@@ -10,7 +10,32 @@ if (iconMenu) {
 }
 //Menu
 
+//real-estate img slider
+const realEstateImg = document.querySelectorAll(".images-slider__item");
 
+realEstateImg.forEach((item) => {
+  let mouseInside;
+  item.onmouseover = function () {
+    mouseInside = true;
+    setTimeout(() => {
+      if (mouseInside) {
+        // То что нужно сделать по событию
+        if (!this.classList.contains("active")) {
+          this.parentElement
+            .querySelectorAll(".images-slider__item")
+            .forEach((item) => {
+              item.classList.remove("active");
+            });
+          this.classList.add("active");
+        }
+      }
+    }, 200);
+  };
+  item.onmouseleave = function () {
+    mouseInside = false;
+  };
+});
+//real-estate img slider
 
 //slider
 const prev = document.querySelector(".btn-arrow-prev"),
@@ -53,8 +78,7 @@ next.addEventListener("click", prevSlide);
 //panorama switcher
 const switcher = document.querySelector(".panorama-slider__switcher"),
   switcherItem = document.querySelectorAll(".panorama-slider__switcher > span"),
-  panoramaSliderItem =
-    document.querySelectorAll(".panorama-slider__item");
+  panoramaSliderItem = document.querySelectorAll(".panorama-slider__item");
 
 switcher.onclick = () => {
   switcherItem.forEach((item) => {

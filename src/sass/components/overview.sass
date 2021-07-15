@@ -1,3 +1,6 @@
+%transition05
+  transition: .5s ease
+
 .overview
   position: relative
   height: 770px
@@ -83,12 +86,14 @@
     text-align: center
     background-color: $bg
     z-index: 3
-    .item-header__icon
-      position: relative
-      padding-bottom: 54%
-      width: 100%
-      border: 1px solid #333
-      background-color: #fff
+
+  .item-header__icon
+    position: relative
+    padding-bottom: 54%
+    width: 100%
+    border: 1px solid #333
+    background-color: #fff
+    @extend %transition05
 
   .icon-sprite
     position: absolute
@@ -100,6 +105,7 @@
     padding: 9% 0
     max-width: 100%
     height: 100%
+    @extend %transition05
   .item-header__text
     margin-bottom: 18px
     font: 500 $fTextSecond 'Roboto Slab', Arial, serif
