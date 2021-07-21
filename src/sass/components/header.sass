@@ -49,10 +49,12 @@
   opacity: 0
   visibility: hidden
   .menu__list
-    font: 500 $fTitleSecond 'Roboto Slab', Arial, serif
+    font: 500 $fTextSecond 'Roboto Slab', Arial, serif
     color: $fontColorMenu
     text-align: center
     text-transform: uppercase
+    +media(425)
+      font-size: $fTitleSecond
     > li
       & + li
         padding-top: 32px

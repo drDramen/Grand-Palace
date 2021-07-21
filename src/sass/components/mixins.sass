@@ -16,3 +16,7 @@ $maxWidthContainer: 1728
   @else
     //Всегда
     #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}))
+
+=media ($size)
+  @media screen and ( min-width: #{$size}px )
+    @content
