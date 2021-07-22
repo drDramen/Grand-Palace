@@ -81,7 +81,9 @@
       font-size: $fTitleSecond
     > li
       & + li
-        padding-top: 32px
+        padding-top: 15px
+        +media(425)
+          padding-top: 32px
       &:last-child
         padding-bottom: 30px;
         +media(370)
@@ -131,10 +133,11 @@
     order: 2
     display: block
     margin-top: 15px
-    padding: 15px 0
+    //padding: 15px 0
     // width: 100%
     font-size: 2.4rem
     +media(425)
+      padding: 15px 0
       font-size: 3.6rem
     +media(540)
       flex: 1 1 0%
@@ -162,7 +165,9 @@
     order: 1
     text-align: right
   .phone-link
-    padding-left: 40px
+    padding-left: 30px
+    +media(425)
+      padding-left: 40px
   .icon-sprite__phone
     +media(425)
       width: 25px;
