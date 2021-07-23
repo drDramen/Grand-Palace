@@ -7,26 +7,46 @@
     position: absolute
     top: 0
     left: 0
-    width: 50%
+    width: 75%
     height: 100%
     background-color: rgba(13, 27, 41, .55)
     backdrop-filter: blur(0.5px)
     filter: blur(2px)
+    +media(1024)
+      width: 50%
   .left-side
     position: relative
+    flex: 1 0 50%;
+    max-width: 100%;
     padding-top: 250px
     padding-bottom: 215px
     color: $fontColorSecond
+    text-align: center
+    +media(630)
+      text-align: left
+      max-width: 75%
+    +media(1024)
+      flex: 0 0 50%;
+      max-width: 50%;
+
   .tagline
     margin-bottom: 15px
-    font: 500 $fTitleMain 'Roboto Slab', Arial, serif
+    font: 500 $fTextSecond 'Roboto Slab', Arial, serif
     text-transform: uppercase
+    +media(425)
+      font-size: 3rem
+    +media(768)
+      font-size: 3.6rem
+    +media(1180)
+      font-size: $fTitleMain
   .hero__title
-    font: 500 $fTextSecond 'Roboto', Arial, serif
+    font: 500 1.6rem 'Roboto', Arial, serif
     line-height: 1.5
+    +media(1024)
+      font-size: $fTextSecond
     .text
       display: block
-  @media screen and ( max-width: 1630px )
+  @media screen and ( max-width: 1860px )
     .left-side
       padding-top: 210px
       padding-bottom: 180px

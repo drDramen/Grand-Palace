@@ -29,6 +29,14 @@
   .header__social, .header__phone
     flex: 1 1 0%
     text-align: center
+  .header__phone
+    display: none
+    +media(540)
+      display: block
+  .phone-link
+    +media(1024)
+      margin-left: -43px
+      font-size: 1em
 .header__logo
   order: -1
   width: 150px
@@ -212,18 +220,12 @@
   display: flex
   flex-direction: column
   align-items: center
-  display: none
-  +media(540)
-    display: block
   .phone-link
     position: relative
     display: inline-block
     padding: 5px 0px 4px 30px
     font: 500 .9em 'Roboto Slab', Arial, serif
     white-space: nowrap
-    +media(1024)
-      margin-left: -43px
-      font-size: 1em
     & + .phone-link
       margin-top: 5px
     svg

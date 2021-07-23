@@ -1,29 +1,56 @@
 
 .real-estate
-  padding: 50px 0
+  padding: 25px 0
+  +media(1024)
+    padding: 50px 0
   article:not(:last-child)
-    margin-bottom: 50px
+    margin-bottom: 25px
     .short-description, .images-slider__items
+      margin-bottom: 25px
+    +media(1024)
       margin-bottom: 50px
+      .short-description, .images-slider__items
+        margin-bottom: 50px
+  article:last-child
+    .images-slider__items
+      margin-bottom: 25px
+      +media(1024)
+        margin-bottom: 0
   .short-description
     display: flex
     flex-direction: column
     justify-content: space-between
+    min-width: 100%
+    text-align: center
+    align-items: center
+    +media(540)
+      align-items: normal
+      text-align: left
+    +media(1024)
+      min-width: auto
   .short-description__title
-    align-self: flex-start
-    display: inline-block
-    margin-bottom: 43px
+    margin-bottom: 25px
+    +media(540)
+      align-self: flex-start
+    +media(1024)
+      margin-bottom: 43px
   .short-description__text
-    margin-bottom: 45px
-    padding-right: 35px
+    margin-bottom: 25px
     line-height: 1.5
+    +media(1024)
+      margin-bottom: 45px
+      padding-right: 35px
   .short-description__btn
-    align-self: flex-start
     padding: 10px 56px 13px
+    +media(540)
+      align-self: flex-start
   .images-slider__items
     display: flex
     justify-content: space-between
     min-height: 250px
+    min-width: 100%
+    +media(1024)
+      min-width: auto
     .images-slider__item
       flex: 0 1 6%
       max-width: 6%
@@ -33,6 +60,10 @@
         max-width: 65%
 
 .real-estate__residential
+  .short-description
+    order: 1
+    +media(1024)
+      order: 0
   .slider-item-
     &1
       background: $bg url(../img/residential-slider-1.jpg) center/cover no-repeat

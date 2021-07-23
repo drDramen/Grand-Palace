@@ -6,31 +6,37 @@ section.plan
   .plan-bg
     .container
       .row
-        aside.plan__legend
+        aside.plan__legend.legend-areas
           h3 Умовні позначення
           ol
             li
               .legend__icon
+                span.icon-number 1
                 +svg('pin')
               span.legend__text Парковка
             li
               .legend__icon
+                span.icon-number 2
                 +svg('pin')
               span.legend__text Фітнес центр
             li
               .legend__icon
+                span.icon-number 3
                 +svg('pin')
               span.legend__text Торговий центр
             li
               .legend__icon
+                span.icon-number 4
                 +svg('pin')
               span.legend__text Медичний центр
             li
               .legend__icon
+                span.icon-number 5
                 +svg('pin')
               span.legend__text Парк <span class="legend__text--uppercase">Terrase</span>
             li
               .legend__icon
+                span.icon-number 6
                 +svg('pin')
               span.legend__text Тераси
         .plan__visual
@@ -39,27 +45,35 @@ section.plan
             ol.legend__location
               li
                 .legend__icon
+                  span.icon-number 1
                   +svg('pin')
               li
                 .legend__icon
+                  span.icon-number 2
                   +svg('pin')
               li
                 .legend__icon
+                  span.icon-number 3
                   +svg('pin')
               li
                 .legend__icon
+                  span.icon-number 4
                   +svg('pin')
               li
                 .legend__icon
+                  span.icon-number 5
                   +svg('pin')
               li
                 .legend__icon
+                  span.icon-number 6
                   +svg('pin')
-              li.repeat
+              li
                 .legend__icon
+                  span.icon-number 6
                   +svg('pin')
-              li.repeat
+              li
                 .legend__icon
+                  span.icon-number 6
                   +svg('pin')
             span.street-left вулиця Подільська
             span.street-right вулиця Свободи
@@ -67,12 +81,18 @@ section.plan
               li I
               li II
               li III
-        aside.plan__legend
+        aside.plan__legend.legend-queue
           h3 Черга
           ul.legend__queue
             li
-              span.legend__text - перша черга
+              span.legend__text
+                span.queue-number I
+                | - перша черга
             li
-              span.legend__text - друга черга
+              span.legend__text
+                span.queue-number II
+                | - друга черга
             li
-              span.legend__text - третя черга
+              span.legend__text
+                span.queue-number III
+                | - третя черга

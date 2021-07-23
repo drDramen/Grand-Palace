@@ -37,9 +37,14 @@ img
 
 main
   & > section + section
-    padding: 50px 0
+    padding: 25px 0
   & > section:first-child, > section:last-child
-    margin-bottom: 50px
+    margin-bottom: 25px
+  +media(1024)
+    & > section + section
+      padding: 50px 0
+    & > section:first-child, > section:last-child
+      margin-bottom: 50px
 
 figure
   margin: 0
@@ -54,7 +59,7 @@ figure
   margin: 0 -1.5%
 
 .col
-  flex: 0 0 50%
+  flex: 1 0 50%
   max-width: 50%
   padding-left: 1.5%
   padding-right: 1.5%
@@ -63,9 +68,12 @@ figure
   position: relative
   display: inline-block
   padding: 0 0 9px
-  font: 500 $fTitleFirst 'Roboto Slab', Arial, serif
+  font: 500 1.8rem 'Roboto Slab', Arial, serif
   text-transform: uppercase
-  // border-bottom: 1px solid $maincolor
+  +media(370)
+    font-size: 2rem
+  +media(1024)
+    font-size: $fTitleFirst
   &::after
     content: ''
     position: absolute
