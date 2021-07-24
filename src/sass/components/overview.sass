@@ -7,6 +7,14 @@
   height: 239px
   overflow-x: hidden
   box-sizing: content-box
+  +media(375)
+    padding: 70px 0 270px
+  +media(540)
+    padding: 92px 0 255px
+    height: 300px
+  +media(768)
+    padding: 120px 0 205px
+    height: 350px
   +media(1024)
     padding: 50px 0 0px
     height: 520px
@@ -17,7 +25,7 @@
   display: flex
   min-width: 100%
   height: 100%
-  overflow-x: clip
+  // overflow-x: clip
   +media(1280)
     overflow: hidden// --
 
@@ -26,33 +34,40 @@
   display: flex
   justify-content: space-between
   width: 90vw
-  top: calc(100% - 66px)
+  top: calc(100% - 60px)
   left: 0
   right: 0
   border: 0
   margin: 0 auto
   z-index: 1
-  +media(1280)
+  +media(1024)
     display: block
+    top: calc(20% + 345px)
+  +media(1280)
     top: calc(20% + 390px)
 
 .btn-arrow + .btn-arrow
+  +media(1024)
+    margin-left: 30px
   +media(1280)
-    margin-left: 28px
+    margin-left: 27px
 
 .btn-arrow
-  align-self: flex-start;
+  align-self: flex-start
   padding: 8px 0
   width: 45%
   text-align: center
+  +media(1024)
+    padding: 11px 64px
+    width: auto
   +media(1280)
     padding: 11px 84px
     width: auto
   svg
-    width: 45px;
-    height: 25px;
+    width: 45px
+    height: 25px
     fill: $fontColorSecond
-    +media(1280)
+    +media(1024)
       width: 57px
       height: 26px
   &-prev
@@ -68,11 +83,7 @@
   position: relative
   height: 100%
   min-width: 100%
-  //overflow-x: hidden
-  +media(1280)
-    overflow: hidden// --
   .container
-    // position: relative
     height: 100%
   &-container
     display: flex
@@ -85,7 +96,7 @@
     align-items: center
     justify-content: space-between
     width: 100%
-    +media(1280)
+    +media(1024)
       flex-direction: column
       height: 100%
       width: auto
@@ -98,43 +109,50 @@
     width: 100%
   .item-header
     position: relative
-    top: -100px;
+    top: -100px
     display: flex
     flex-direction: column
     justify-content: flex-end
     align-items: center
     padding-left: 5px
     padding-right: 5px
-    padding-bottom: 10px;
-    // width: 100%
+    padding-bottom: 10px
     height: 112px
     text-align: center
     background-color: $bg
     z-index: 3
-    +media(1280)
+    +media(375)
+      top: -85px
+    +media(768)
+      height: 130px
+    +media(1024)
       top: 0
       justify-content: center
       padding-left: 22px
       padding-right: 22px
       padding-bottom: 0
-      width: 245px;
+      width: 160px
       height: 100%
+    +media(1280)
+      width: 245px
 
   .item-header__icon
     position: relative
     // padding-bottom: 45%;
-    width: 80px;
-    height: 40px
+    width: 80px
+    height: 44px
     border: 1px solid #333
     background-color: #fff
     @extend %transition05
     +media(540)
-      height: 50px
       width: 110px
-
-    +media(1280)
-      padding-bottom: 54%;
-      width: 100%;
+      height: 50px
+    +media(768)
+      width: 135px
+      height: 65px
+    +media(1024)
+      padding-bottom: 54%
+      width: 100%
 
   .icon-sprite
     position: absolute
@@ -147,11 +165,19 @@
     max-width: 100%
     height: 100%
     +media(640)
+      padding: 4% 0
+    +media(1280)
       padding: 9% 0
+
     @extend %transition05
   .item-header__text
     margin-bottom: 5px
     font: 500 1.4rem 'Roboto Slab', Arial, serif
+    +media(768)
+      margin-bottom: 10px
+      font-size: 1.8rem
+    +media(1024)
+      font-size: 2rem
     +media(1280)
       margin-bottom: 18px
       font-size: $fTextSecond
@@ -180,34 +206,51 @@
       position: relative
   &-wrap
     position: absolute
-    bottom: -228px;
+    bottom: -235px
     left: 0
     width: 100%
-    height: 283px
+    height: 290px
     overflow-x: hidden
-    +media(1280)
+    +media(375)
+      bottom: -210px
+      height: 265px
+    +media(540)
+      bottom: -195px
+      height: 250px
+    +media(768)
+      bottom: -145px
+      height: 200px
+    +media(1024)
       top: 20%
       bottom: auto
+      width: 400px
+      height: 305px
+      overflow: hidden
+    +media(1280)
       width: 478px
       height: 350px
-      overflow: hidden
 
   &-box
     padding: 20px 15px 10px 20px
+    +media(1024)
+      padding: 30px 20px 10px 28px
     +media(1280)
       padding: 50px 50px 10px 28px
 
-    // background-color: #faf7f3
   &__description
-    font-size: 14px;
+    font-size: 1.4rem
     line-height: 1.5
     overflow: hidden
+    +media(409)
+      font-size: 1.6rem
     +media(1280)
       @include adaptiv-prop('font-size', 18, 14, 0)
   &__title
     margin-bottom: 10px
     color: #3c3839
     font-weight: 600
+    +media(1024)
+      font-size: 2.4rem
     +media(1280)
       margin-bottom: 15px
 .overview__item

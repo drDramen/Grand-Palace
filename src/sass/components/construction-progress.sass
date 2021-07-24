@@ -2,20 +2,25 @@
   &__title
     margin-bottom: 30px
   &__galery
-    display: flex
-    margin-bottom: 50px
-    height: 260px
-    justify-content: space-between
-    // gap: 50px
-    // flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 25px
+    +media(540)
+      justify-content: space-between
   &__img
-    flex-basis: 25%
-    // height: 260px
-    max-width: 25%
+    flex-basis: 75%
+    max-width: 75%
+    height: 260px
+    margin-bottom: 25px
     padding-left: 1.5%
     padding-right: 1.5%
-    height: 100%
     transition: .5s ease
+    align-self: center
+    +media(540)
+      flex-basis: 50%
+      max-width: 50%
+    +media(1024)
+      flex-basis: 25%
+      max-width: 25%
     img
       height: 100%
       object-fit: cover
@@ -24,11 +29,15 @@
       transform: scale(1.1)
 
     &.active
-      position: relative;
-      transform: translateX(-50%)scale(3);
-      top: 0;
-      left: 50%;
+      position: relative
+      transform: translateX(-50%)scale(3)
+      top: 0
+      left: 50%
   .btn-wrap
     text-align: center
   &__btn
-    padding: 20px 40px
+    padding: 15px 20px
+    font-size: 1.6rem
+    +media(768)
+      padding: 20px 40px
+      font-size: 1.8rem
