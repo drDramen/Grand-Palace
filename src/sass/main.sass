@@ -67,12 +67,13 @@ figure
 .title
   position: relative
   display: inline-block
-  padding: 0 0 9px
+  padding: 0 0 5px
   font: 500 1.8rem 'Roboto Slab', Arial, serif
   text-transform: uppercase
   +media(370)
     font-size: 2rem
   +media(1024)
+    padding: 0 0 9px
     font-size: $fTitleFirst
   &::after
     content: ''
@@ -85,7 +86,9 @@ figure
   .head-line
     position: relative
     display: inline-block
-    padding-top: 9px
+    padding-top: 5px
+    +media(1024)
+      padding-top: 9px
     &::after
       content: ''
       position: absolute
@@ -95,8 +98,8 @@ figure
       height: 1px
       background-color: $maincolor
   &--one-word
-    &::after
-      width: 110%
+    // &::after
+    //   width: 110%
     .head-line
       &::after
         width: 50%
