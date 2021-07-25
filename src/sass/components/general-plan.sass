@@ -64,10 +64,11 @@
   .legend__location
     li
       position: absolute
-      transform: translate(-50%,-100%)
-      &:nth-child(1)
-        top: 46.7%
-        left: 89%
+      transform-origin: left top
+      transform: translate(-50%, -100%)
+      top: 46.7%
+      left: 89%
+      cursor: pointer
       &:nth-child(2)
         top: 68%
         left: 29%
@@ -89,6 +90,9 @@
       &:nth-child(8)
         top: 20.5%
         left: 20.3%
+      &:hover
+        // transform-origin: center bottom
+        transform: scale(1.2) translate(-50%, -100%)
 
   .queue
     li
