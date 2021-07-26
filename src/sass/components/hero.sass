@@ -7,27 +7,28 @@
     position: absolute
     top: 0
     left: 0
-    width: 75%
+    width: 100%
     height: 100%
     background-color: rgba(13, 27, 41, .55)
-    backdrop-filter: blur(0.5px)
+    // backdrop-filter: blur(0.5px)
     filter: blur(2px)
     +media(1024)
       width: 50%
+      backdrop-filter: blur(0.5px)
   .left-side
     position: relative
-    flex: 1 0 50%;
-    max-width: 100%;
+    flex: 1 0 50%
+    max-width: 100%
     padding-top: 250px
     padding-bottom: 215px
     color: $fontColorSecond
     text-align: center
-    +media(630)
+    +media(640)
       text-align: left
       max-width: 75%
     +media(1024)
-      flex: 0 0 50%;
-      max-width: 50%;
+      flex: 0 0 50%
+      max-width: 50%
 
   .tagline
     margin-bottom: 15px

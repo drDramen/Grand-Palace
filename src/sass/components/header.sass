@@ -29,6 +29,10 @@
   .header__social, .header__phone
     flex: 1 1 0%
     text-align: center
+  .header__social
+    display: none
+    +media(768)
+      display: block
   .header__phone
     display: none
     +media(540)
@@ -86,16 +90,19 @@
     text-align: center
     text-transform: uppercase
     +media(425)
-      font-size: $fTitleSecond
+      font-size: 3rem
     > li
       & + li
         padding-top: 15px
         +media(425)
-          padding-top: 32px
+          padding-top: 25px
       &:last-child
         padding-bottom: 30px;
         +media(370)
           padding-bottom: 15px;
+    +media(540)
+      padding-top: 32px
+      font-size: $fTitleSecond
     .menu__link
       position: relative
       &::after, &::before
@@ -145,8 +152,8 @@
     // width: 100%
     font-size: 2.4rem
     +media(425)
-      padding: 15px 0
-      font-size: 3.6rem
+      padding: 10px 0
+      font-size: 3rem
     +media(540)
       flex: 1 1 0%
       font-size: inherit
@@ -236,19 +243,19 @@
       bottom: 0
       margin: auto 0
 
-.social-list
-  display: none
-  +media(768)
-    display: block
-  .social-link
-    display: inline-block
-    transition: all .5s ease-out
-    & + .social-link
-      margin-left: 20px
-    object
-      pointer-events: none
-    &:hover
-      transform: scale(1.2)
+// .social-list
+//   display: none
+//   +media(768)
+//     display: block
+.social-link
+  display: inline-block
+  transition: all .5s ease-out
+  & + .social-link
+    margin-left: 20px
+  object
+    pointer-events: none
+  &:hover
+    transform: scale(1.2)
 
 .header__lng-toggle
   display: inline-block
