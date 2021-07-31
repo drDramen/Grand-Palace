@@ -71,8 +71,8 @@ const prevSlide = () => {
   }
 };
 
-prev.addEventListener("click", nextSlide);
-next.addEventListener("click", prevSlide);
+prev.addEventListener("click", prevSlide);
+next.addEventListener("click", nextSlide);
 //slider
 
 //panorama switcher

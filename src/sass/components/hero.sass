@@ -10,7 +10,6 @@
     width: 100%
     height: 100%
     background-color: rgba(13, 27, 41, .55)
-    // backdrop-filter: blur(0.5px)
     filter: blur(2px)
     +media(1024)
       width: 50%
@@ -19,8 +18,8 @@
     position: relative
     flex: 1 0 50%
     max-width: 100%
-    padding-top: 250px
-    padding-bottom: 215px
+    padding-top: 65px
+    padding-bottom: 55px
     color: $fontColorSecond
     text-align: center
     +media(640)
@@ -29,6 +28,12 @@
     +media(1024)
       flex: 0 0 50%
       max-width: 50%
+    +media(1420)
+      padding-top: 210px
+      padding-bottom: 180px
+    +media(1860)
+      padding-top: 250px
+      padding-bottom: 215px
 
   .tagline
     margin-bottom: 15px
@@ -38,7 +43,9 @@
       font-size: 3rem
     +media(768)
       font-size: 3.6rem
-    +media(1180)
+    +media(1420)
+      font-size: 4.4rem
+    +media(1630)
       font-size: $fTitleMain
   .hero__title
     font: 500 1.6rem 'Roboto', Arial, serif
@@ -47,11 +54,3 @@
       font-size: $fTextSecond
     .text
       display: block
-  @media screen and ( max-width: 1860px )
-    .left-side
-      padding-top: 210px
-      padding-bottom: 180px
-  @media screen and ( max-width: 1367px )
-    .left-side
-      padding-top: 65px
-      padding-bottom: 55px

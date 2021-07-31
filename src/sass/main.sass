@@ -63,6 +63,16 @@ figure
   max-width: 50%
   padding-left: 1.5%
   padding-right: 1.5%
+  &-20
+    flex: 1 1 20%
+    max-width: 20%
+
+
+.title-wrap
+  text-align: center
+  margin-bottom: 25px
+  +media(1024)
+    margin-bottom: 50px
 
 .title
   position: relative
@@ -119,9 +129,13 @@ figure
     //   transform: scale(1)
 
 @import components/sprite
+@import components/custom-select
 @import components/header
 @import components/hero
+@import components/residential-hero
 @import components/real-estate
+@import components/residential-overview
+@import components/residential-advantages
 @import components/general-plan
 @import components/overview
 @import components/panorama

@@ -35,10 +35,13 @@
     +media(1024)
       margin-bottom: 43px
   .short-description__text
-    margin-bottom: 25px
+    margin-bottom: 12px
     line-height: 1.5
+    &:last-of-type
+      margin-bottom: 25px
+      +media(1024)
+        margin-bottom: 45px
     +media(1024)
-      margin-bottom: 45px
       padding-right: 35px
   .short-description__btn
     padding: 10px 56px 13px
