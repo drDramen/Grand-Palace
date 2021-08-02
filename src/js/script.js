@@ -13,7 +13,8 @@ if (iconMenu) {
 //real-estate img slider
 const realEstateImg = document.querySelectorAll(".images-slider__item");
 
-realEstateImg.forEach((item) => {
+if (realEstateImg.length) {
+  realEstateImg.forEach((item) => {
   let mouseInside;
   item.onmouseover = function () {
     mouseInside = true;
@@ -35,6 +36,8 @@ realEstateImg.forEach((item) => {
     mouseInside = false;
   };
 });
+}
+
 //real-estate img slider
 
 //slider
@@ -70,9 +73,8 @@ const prevSlide = () => {
     activeSlide(index);
   }
 };
-
-prev.addEventListener("click", prevSlide);
-next.addEventListener("click", nextSlide);
+if (prev) prev.addEventListener("click", prevSlide);
+if (next) next.addEventListener("click", nextSlide);
 //slider
 
 //panorama switcher
@@ -80,7 +82,8 @@ const switcher = document.querySelector(".panorama-slider__switcher"),
   switcherItem = document.querySelectorAll(".panorama-slider__switcher > span"),
   panoramaSliderItem = document.querySelectorAll(".panorama-slider__item");
 
-switcher.onclick = () => {
+if (switcher) {
+  switcher.onclick = () => {
   switcherItem.forEach((item) => {
     if (item.classList.contains("active")) {
       item.classList.remove("active");
@@ -96,4 +99,6 @@ switcher.onclick = () => {
     }
   });
 };
+}
+
 //panorama switcher
