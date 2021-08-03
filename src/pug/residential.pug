@@ -10,14 +10,15 @@ html(lang="uk")
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   link(rel="stylesheet" href="css/main.css")
   body(tabIndex="0")
-    include components/vars
-    include components/mixins
-    include components/header
-    main
-      include components/residential-hero
-      include components/residential-overview
-      include components/residential-advantages
-      include components/residential-plan
+    .body-wrapper
+      include components/vars
+      include components/mixins
+      include components/header
+      main.main
+        include components/residential-hero
+        include components/residential-overview
+        include components/residential-advantages
+        include components/residential-plan
 
-    include components/footer
+      include components/footer
     script(src="js/scripts.js")

@@ -5,9 +5,11 @@
   box-sizing: border-box
 
 html
+  height: 100%
   font-size: 10px
 body
   margin: 0
+  height: 100%
   font: 400 $fTextFirst Roboto, Arial, sans-serif
   line-height: 1.15
   color: $fontColorFirst
@@ -49,6 +51,14 @@ main
 figure
   margin: 0
 
+
+.body-wrapper
+  min-height: 100%
+  display: flex
+  flex-direction: column
+
+.main
+  flex: 1 1 auto
 .container
   max-width: 90vw
   margin: 0 auto
@@ -142,6 +152,7 @@ figure
 @import components/panorama
 @import components/construction-progress
 @import components/documentation
+@import components/contact-section
 @import components/footer
 
 // @media screen and ( orientation: landscape)

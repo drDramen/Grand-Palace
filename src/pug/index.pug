@@ -10,16 +10,17 @@ html(lang="uk")
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   link(rel="stylesheet" href="css/main.css")
   body(tabIndex="0")
-    include components/vars
-    include components/mixins
-    include components/header
-    main
-      include components/hero
-      include components/real-estate
-      include components/general-plan
-      include components/overview
-      include components/panorama
-      include components/construction-progress
-      include components/documentation
-    include components/footer
+    .body-wrapper
+      include components/vars
+      include components/mixins
+      include components/header
+      main.main
+        include components/hero
+        include components/real-estate
+        include components/general-plan
+        include components/overview
+        include components/panorama
+        include components/construction-progress
+        include components/documentation
+      include components/footer
     script(src="js/scripts.js")

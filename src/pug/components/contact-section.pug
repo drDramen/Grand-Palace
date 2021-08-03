@@ -1,0 +1,37 @@
+section.contacts
+  .container
+    .contacts-wrapper
+      h2.contacts__title.title
+        span.head-line Наші
+        |  контакти
+      .contacts__items
+        .contacts-info__items.contacts__item
+          .contacts-info__item
+            h4 Телефони
+            .phone-list.contacts-info__phones
+              a.phone-link(href='tel:+380671321563')
+                +svg('phone')
+                |(067)&nbsp;132-15-63
+              a.phone-link(href='tel:+380671321563')
+                |(067)&nbsp;132-15-63
+          .contacts-info__item
+            h4 Пошта
+            .contacts-info__email
+              a.email-link(href='email:office@grandpalace.km.ua')
+                +svg('email')
+                |office@grandpalace.km.ua
+          .contacts-info__item
+            h4 Відділення продажу
+            .contacts-info__address
+              +svg('pin-footer')
+              p м. Хмельницький, вул. Свободи, 14
+          .contacts-info__item
+            h4 Режим роботи
+            .contacts-info__working-hours
+              p Пн-пт 10:00 – 19:00
+                +svg('clock')
+              p Сб 11:00 – 17:00, Нд вихідний
+
+        .contacts-map.contacts__item
+          .contacts-map__title
+            h4 Ми на карті
