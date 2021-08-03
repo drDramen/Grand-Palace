@@ -16,9 +16,13 @@
     transition: .5s ease
     align-self: center
     cursor: pointer
+    &:nth-child(n+4)
+      display: none
     +media(540)
       flex-basis: 50%
       max-width: 50%
+      &:nth-child(n+4)
+        display: block
     +media(1024)
       flex-basis: 25%
       max-width: 25%
