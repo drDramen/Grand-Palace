@@ -1,0 +1,26 @@
+.hero
+  &.hero-residential, &.hero-commercial
+    &::before
+      right: 0
+      bottom: 0
+      margin: auto 0
+      height: 59%
+    .left-side
+      padding-top: 100px;
+      padding-bottom: 100px;
+      +media(1340)
+        padding-top: 250px
+        padding-bottom: 250px
+    .tagline
+      margin-bottom: 0
+  &.hero-residential
+    background-image: url(../img/hero-residential.jpg)
+    background-position: center 77%;
+  &.hero-commercial
+    background-image: url(../img/hero-commercial.jpg)
+    background-position: center 69%;
+    .left-side
+      flex-basis: auto
+      max-width: 100%
+    &::before
+      width: 56%
