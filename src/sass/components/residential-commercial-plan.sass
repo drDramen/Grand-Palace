@@ -1,8 +1,10 @@
 .residential-plan, .commercial-plan
   .short-description
     margin-bottom: 45px
-    font-size: 2.4rem
+    font-size: 1.8rem
     text-align: center
+    +media(769)
+      font-size: 2.4rem
   .residential-plan__title, .commercial-plan__title
     .head-line:after
       width: 52%
@@ -11,21 +13,31 @@
   font: 500 1.8rem 'Roboto Slab', Arial, serif
   text-transform: uppercase
 .plan-nav__header
-  margin-bottom: 100px
+  margin-bottom: 50px
+  +media(1025)
+    margin-bottom: 100px
 
 .filter__items, .filter__item
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: space-around
+
+.filter__items
+  +media(540)
+    justify-content: space-between
 
 .filter__item
+  flex-direction: column
   flex: 0 1 33.3333%
-  padding: 0 30px
+  +media(768)
+    flex-direction: row
+    padding: 0 30px
 
 .filter__title
-  margin-right: 50px
-  font-size: 2.4rem
-
+  font-size: 1.8rem
+  +media(769)
+    margin-right: 50px
+    font-size: 2.4rem
 .filter-queue__items
   position: relative
   display: flex
@@ -75,27 +87,46 @@
 
 .plan-nav__title
   margin-bottom: 40px
-  font-size: 3rem
+  font-size: 2.4rem
   color: $maincolor
+  +media(768)
+    font-size: 3rem
 
 .plan-nav__img
   position: relative
-  img
+  .img
     display: block
-    margin: 0 auto 40px
-    width: 50% // 38% и меньше
+    margin: 0 auto 80px
+    width: 80% // 38% и меньше
     text-align: center
+    +media(540)
+      margin: 0 auto 40px
+    +media(770)
+      width: 50%
   .btn-arrow
     position: absolute
-    top: 50%
-    padding: 11px 0
-    width: 226px
-    transform: translateY(-50%)
+    bottom: -60px
+    padding: 6px 0
+    width: 140px
+    font-size: 1.6rem
     & + .btn-arrow
       margin: 0
     &:hover
+      padding: 6px 0
+    +media(540)
       padding: 11px 0
+      top: -80px
+      bottom: auto
+    +media(768)
+      font-size: 1.8rem
+      width: 226px
+      &:hover
+        padding: 11px 0
+    +media(1025)
+      top: 50%
       transform: translateY(-50%)
+      &:hover
+        transform: translateY(-50%)
     span
       position: relative
       svg
@@ -109,19 +140,25 @@
   .btn-arrow-prev
     left: 0
     span
-      padding-left: 55px
+      padding-left: 40px
+      +media(768)
+        padding-left: 55px
       svg
         left: 0
   .btn-arrow-next
     right: 0
     span
-      padding-right: 55px
+      padding-right: 45px
+      +media(768)
+        padding-right: 55px
 
 .plan-nav__info
   display: flex
   // flex-direction: column
   justify-content: center
-  font-size: 2.4rem
+  font-size: 1.8rem
+  +media(768)
+    font-size: 2.4rem
 
 .info-wrap
   display: flex

@@ -41,8 +41,8 @@ if (realEstateImg.length) {
 //real-estate img slider
 
 //slider
-const prev = document.querySelector(".btn-arrow-prev"),
-  next = document.querySelector(".btn-arrow-next"),
+const prev = document.querySelector(".overview-btn__container .btn-arrow-prev"),
+  next = document.querySelector(".overview-btn__container .btn-arrow-next"),
   slides = document.querySelectorAll(".overview__items");
 
 let index = 0;

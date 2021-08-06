@@ -1,9 +1,9 @@
 section.commercial-plan
-  .title-wrap
-    h2.commercial-plan__title.title
-      span.head-line план комерційного приміщення
-  .plan
-    .container
+  .container
+    .title-wrap
+      h2.commercial-plan__title.title
+        span.head-line план комерційного приміщення
+    .plan
       p.short-description Перегляньте повне планування житлового комплексу та підберіть для себе приміщення залежно від поверху, квадратури та ціни.
       .plan-nav
         .plan-nav__header
@@ -24,8 +24,8 @@ section.commercial-plan
                 details.custom-select
                   summary.radio-items
                     - var n = 2
+                    input.radio-item(type="radio" name="floor" id="floor1" title="1" value="1" checked)
                     while n <= 18
-                      input.radio-item(type="radio" name="floor" id="floor1" title="1" value="1" checked)
                       input.radio-item(type="radio" name="floor" id="floor"+n title=n value=n++)
                   ul.list-items
                     - var k = 1
@@ -35,7 +35,8 @@ section.commercial-plan
         .plan-nav__title
           h3 II черга
         .plan-nav__img
-          img(src="img/residential-plan.jpg" alt="Grand Palace - план житлового поверху")
+          .img
+            img(src="img/residential-plan.jpg" alt="Grand Palace - план житлового поверху")
           .btn.btn-arrow.btn-arrow-prev
             span I черга
               +svg('arrow')
@@ -48,5 +49,5 @@ section.commercial-plan
               span.info-sold__title Продано -&nbsp;
               span.info-sold__list 1a, 1e
             p.info-for-sale
-              span.info-for-sale__title Доступно для продажу -&nbsp;
+              span.info-for-sale__title Доступно для&nbspпродажу&nbsp-&nbsp;
               span.info-for-sale__list 1c, 1d, 1b

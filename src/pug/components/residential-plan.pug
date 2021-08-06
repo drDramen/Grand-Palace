@@ -1,13 +1,13 @@
 section.residential-plan
-  .title-wrap
-    h2.residential-plan__title.title
-      span.head-line План квартири
-  .plan-residential
-    .container
+  .container
+    .title-wrap
+      h2.residential-plan__title.title
+        span.head-line План квартири
+    .plan-residential
       p.short-description Перегляньте повне планування житлового комплексу та підберіть для себе квартиру залежно від поверху, кімнатності, квадратури та ціни.
       .plan-nav
         .plan-nav__header
-          form.filter(action="")
+          form.filter(action="" method="post")
             .filter__items
               .filter__queue.filter__item
                 p.filter__title Черга
@@ -35,7 +35,8 @@ section.residential-plan
         .plan-nav__title
           h3 II черга
         .plan-nav__img
-          img(src="img/residential-plan.jpg" alt="Grand Palace - план житлового поверху")
+          .img
+            img(src="img/residential-plan.jpg" alt="Grand Palace - план житлового поверху")
           .btn.btn-arrow.btn-arrow-prev
             span I черга
               +svg('arrow')
