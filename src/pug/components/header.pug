@@ -9,29 +9,29 @@ header.header
           +svg('phone')
           |(067)&nbsp;00-98-700
       .header-info__item.header__logo
-        a.menu__logo(href='/')
-          img(src='img/logo-grand-palace.svg' alt='Grand Palace - житловий коплекс')
+        a.menu__logo(href='./')
+          img(src='img/logo-grand-palace.svg' alt='Grand Palace - житловий комплекс')
       .header-info__item.header__social.social-list
         a.social-link(href='#' target="_blank")
           +svg('fb', 31, 31)
         a.social-link(href='#' target="_blank")
           object(class='icon' type='image/svg+xml' data='img/instagram.svg' width='31' height='31')
       .header-info__item.header__lng-toggle
-        a.active(href='#') Укр
-        a(href='#') Рус
+        a.active(href='#' data-lang="uk") Укр
+        a(href='#' data-lang="ru") Рус
     nav.header__menu
       ul.menu__list
         li
-          a.menu__link.active(href='residential.html' target='_blank') Житлова нерухомість
+          a.menu__link.active(href='residential.html') Житлова нерухомість
         li
-          a.menu__link(href='commercial.html' target='_blank') Комерційна нерухомість
+          a.menu__link(href='commercial.html') Комерційна нерухомість
         li
-          a.menu__link(href='#' target='_blank') Загальний план
+          a.menu__link(href= location + "#generalplan") Загальний план
         li
-          a.menu__link(href='#' target='_blank') Переваги
+          a.menu__link(href= location + "#overview") Переваги
         li
-          a.menu__link(href='#' target='_blank') Хід будівництва
+          a.menu__link(href= location + "#progress") Хід будівництва
         li
-          a.menu__link(href='#' target='_blank') Документація
+          a.menu__link(href= location + "#documentation") Документація
         li
-          a.menu__link(href='contacts.html' target='_blank') Контакти
+          a.menu__link(href='contacts.html') Контакти

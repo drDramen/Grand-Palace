@@ -41,6 +41,22 @@ gulp.task("html", function () {
     );
 });
 
+gulp.task("htmlru", function () {
+  return gulp
+    .src(["src/pug/ru/*.pug"])
+    .pipe(
+      pug({
+        pretty: true
+      })
+    )
+    .pipe(gulp.dest("dist/ru"))
+    .pipe(
+      browserSync.reload({
+        stream: true
+      })
+    );
+});
+
 gulp.task("css", function () {
   return gulp
     .src(["src/sass/*.css", "src/sass/*.sass"])
@@ -144,6 +160,7 @@ gulp.task("watch", function () {
   gulp.watch("src/sass/**/*.sass", gulp.parallel("css"));
   gulp.watch("src/js/**/*.js", gulp.parallel("js"));
   gulp.watch("src/pug/**/*.pug", gulp.parallel("html"));
+  gulp.watch("src/pug/ru/**/*.pug", gulp.parallel("htmlru"));
   gulp.watch("src/*.*", gulp.parallel("files"));
   gulp.watch("src/fonts/**/*.*", gulp.parallel("fonts"));
   gulp.watch("src/img/**/*.*", gulp.parallel("images"));
@@ -154,6 +171,7 @@ gulp.task(
   gulp.parallel(
     "watch",
     "html",
+    "htmlru",
     "css",
     "js",
     "files",

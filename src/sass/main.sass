@@ -31,6 +31,9 @@ h1, h2, h3, h4, h5, h6
 p
   margin: 0
 
+sup
+  font-size: 0.65em
+
 img, svg, object
   vertical-align: bottom
 
@@ -135,8 +138,13 @@ figure
   &:hover
     transform: scale(1.02)
     box-shadow: 0 5px 5px 2.5px rgba(67,4,4,0.2)
-    // & svg
-    //   transform: scale(1)
+
+.ancor
+  position: relative
+  top: -124.46875px
+  left: 0
+  +media(1024)
+    top: -173.625px
 
 @import components/sprite
 @import components/custom-select
