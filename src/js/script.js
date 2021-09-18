@@ -65,30 +65,94 @@ if (menuAncorLink) {
 //Menu
 
 //real-estate img slider
-const realEstateImg = document.querySelectorAll(".images-slider__item");
+const sliderRealEstateImg = document.querySelectorAll(".images-slider__items");
 
-if (realEstateImg.length) {
-  realEstateImg.forEach((item) => {
-    let mouseInside;
-    item.onmouseover = function () {
-      mouseInside = true;
-      setTimeout(() => {
-        if (mouseInside) {
-          // То что нужно сделать по событию
-          if (!this.classList.contains("active")) {
-            this.parentElement
-              .querySelectorAll(".images-slider__item")
-              .forEach((item) => {
-                item.classList.remove("active");
-              });
-            this.classList.add("active");
+if (sliderRealEstateImg.length) {
+  sliderRealEstateImg.forEach(function(item){
+    const realEstateImg = item.querySelectorAll(".images-slider__item");
+    let currentSlider = item.querySelector(".images-slider__item.active");
+
+    if (realEstateImg.length) {
+      realEstateImg.forEach((item) => {
+        let mouseInside;
+        item.onmouseover = function () {
+          mouseInside = true;
+          setTimeout(() => {
+            // То что нужно сделать по событию
+            if (mouseInside && !this.classList.contains("active")) {
+              currentSlider.classList.remove("active");
+              currentSlider = this;
+              currentSlider.classList.add("active");
+            }
+          }, 200);
+        };
+        item.onmouseleave = function () {
+          mouseInside = false;
+        };
+      });
+    }
+
+    function nextSlideRealEstate() {
+      if (currentSlider.nextElementSibling !== null) {
+        currentSlider.classList.remove("active");
+        currentSlider = currentSlider.nextElementSibling;
+        currentSlider.classList.add("active");
+      }
+    }
+
+    function prevSlideRealEstate() {
+      if (currentSlider.previousElementSibling !== null) {
+        currentSlider.classList.remove("active");
+        currentSlider = currentSlider.previousElementSibling;
+        currentSlider.classList.add("active");
+      }
+    }
+
+    function touchEvent() {
+      const sensitivity = 40;
+      let touchStart = null; //Точка начала касания
+      let touchPosition = null; //Текущая позиция
+
+      const touchStartSlider = function (e) {
+        touchStart = {
+          x: e.changedTouches[0].clientX
+        };
+        touchPosition = {
+          x: touchStart.x
+        };
+      };
+
+      const touchMoveSlider = function (e) {
+        touchPosition = {
+          x: e.changedTouches[0].clientX
+        };
+      };
+
+      const touchEndSlider = function (e) {
+        //Получаем растояния от начальной до конечной точки по оси Х
+        let d = {
+          x: touchStart.x - touchPosition.x
+        };
+
+        if (Math.abs(d.x) > sensitivity) {
+          //Проверяем, было ли движение достаточно длинным
+          if (d.x > 0) {
+            //Если значение больше нуля, значит пользователь двигал пальцем справа налево
+
+            nextSlideRealEstate();
+          } //Иначе он двигал им слева направо
+          else {
+            prevSlideRealEstate();
           }
         }
-      }, 200);
-    };
-    item.onmouseleave = function () {
-      mouseInside = false;
-    };
+      };
+
+      item.addEventListener("touchstart", touchStartSlider);
+      item.addEventListener("touchmove", touchMoveSlider);
+      item.addEventListener("touchend", touchEndSlider);
+    }
+
+    touchEvent();
   });
 }
 
