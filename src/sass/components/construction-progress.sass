@@ -1,14 +1,40 @@
 .construction-progress
-  &__title
-    margin-bottom: 30px
-  &__galery
-    justify-content: center
-    margin-bottom: 25px
+  .galery-wrapper
+    position: relative
+    padding: 25px 10%
+    overflow-x: hidden
+    &::after, &::before
+      content: ''
+      position: absolute
+      width: 12%
+      height: 100%
+      top: 0
+      z-index: 2
+    &::after
+      right: 0
+      background: linear-gradient(to right, transparent, rgb(243, 236, 226))
+    &::before
+      left: 0
+      background: linear-gradient(to left, transparent, rgb(243, 236, 226))
     +media(540)
+      padding-left: 0
+      padding-right: 0
       justify-content: space-between
+
+      overflow-x: visible
+      &::after, &::before
+        content: none
+
+  &__title
+    margin-bottom: 5px
+  &__galery
+    flex-wrap: nowrap
+    transition: .75s ease
+    +media(540)
+      flex-wrap: wrap
   &__img
-    flex-basis: 75%
-    max-width: 75%
+    flex: 0 0 100%
+    max-width: 100%
     height: 260px
     margin-bottom: 25px
     padding-left: 1.5%
@@ -16,10 +42,10 @@
     transition: .5s ease
     align-self: center
     cursor: pointer
-    &:nth-child(n+4)
-      display: none
+    // &:nth-child(n+4)
+    //   display: none
     +media(540)
-      flex-basis: 50%
+      flex: 0 1 50%
       max-width: 50%
       &:nth-child(n+4)
         display: block
