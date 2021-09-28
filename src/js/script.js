@@ -190,9 +190,7 @@ if (floorList) {
 
 (function mobileSliderOfConstruction() {
   const slider = document.querySelector(".construction-progress__galery");
-  const sliderItem = document.querySelectorAll(".construction-progress__img");
   let cancelTouchEvent;
-  let sliderItemWidth = sliderItem[0].getBoundingClientRect().width;
 
   let sliderInterval;
   let direction = -1;
@@ -258,6 +256,7 @@ if (floorList) {
   }, 0);
 
   function addSlides() {
+    const sliderItem = document.querySelectorAll(".construction-progress__img");
     if (sliderItem.length >= 5) {
       slider.prepend(slider.lastElementChild);
       slider.prepend(slider.lastElementChild);
@@ -289,9 +288,11 @@ if (floorList) {
     slider.addEventListener("transitionend", transitionend);
     slider.addEventListener("touchstart", stopSlider);
     slider.addEventListener("touchend", startSlider);
+    window.addEventListener("blur", stopSlider);
+    window.addEventListener("focus", startSlider);
     slider.style.transform = "translateX(-200%)";
     cancelTouchEvent = touchEvent(slider, prev, next);
-    startSlider();
+    // startSlider();
     transitionEnd = true;
   }
 
@@ -304,6 +305,8 @@ if (floorList) {
     slider.removeEventListener("touchend", cancelTouchEvent.touchEndSlider);
     slider.removeEventListener("touchstart", stopSlider);
     slider.removeEventListener("touchend", startSlider);
+    window.removeEventListener("blur", stopSlider);
+    window.removeEventListener("focus", startSlider);
     slider.style.transition = "none";
     slider.style.transform = "translateX(0%)";
   }
@@ -332,6 +335,8 @@ if (floorList) {
       endMobile();
     }
   };
+
+
 })();
 
 function touchEvent(target, prev, next) {
