@@ -106,8 +106,8 @@ gulp.task("js", function () {
 
 gulp.task("files", function () {
   return gulp
-    .src(["src/*.*"])
-    .pipe(gulp.dest("dist"))
+    .src(["src/document/**/*.*"])
+    .pipe(gulp.dest("dist/document"))
     .pipe(
       browserSync.reload({
         stream: true
@@ -161,7 +161,7 @@ gulp.task("watch", function () {
   gulp.watch("src/js/**/*.js", gulp.parallel("js"));
   gulp.watch("src/pug/**/*.pug", gulp.parallel("html"));
   gulp.watch("src/pug/ru/**/*.pug", gulp.parallel("htmlru"));
-  gulp.watch("src/*.*", gulp.parallel("files"));
+  gulp.watch("src/document/**/*.*", gulp.parallel("files"));
   gulp.watch("src/fonts/**/*.*", gulp.parallel("fonts"));
   gulp.watch("src/img/**/*.*", gulp.parallel("images"));
 });
